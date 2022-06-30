@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/ringover-assignment/static/css/main.f4ccf76b.css",
+    "main.js": "/ringover-assignment/static/js/main.43e4fa36.js",
+    "static/js/787.c2945f51.chunk.js": "/ringover-assignment/static/js/787.c2945f51.chunk.js",
+    "static/media/shoe2.png": "/ringover-assignment/static/media/shoe2.6b33f55d1b7df2986de5.png",
+    "static/media/tonikroos.jpg": "/ringover-assignment/static/media/tonikroos.e80bf0bde8f125d2942c.jpg",
+    "static/media/grasspic.jpg": "/ringover-assignment/static/media/grasspic.60d418585600b05647eb.jpg",
+    "static/media/Product_Sans.ttf": "/ringover-assignment/static/media/Product_Sans.863727019c4716c4dc24.ttf",
+    "static/media/christiano.jpg": "/ringover-assignment/static/media/christiano.f1dfce5fc4cc9bbfa560.jpg",
+    "static/media/shoe.jpg": "/ringover-assignment/static/media/shoe.9a7bc9c8f2cbd547b24e.jpg",
+    "static/media/ikercasillas.jpg": "/ringover-assignment/static/media/ikercasillas.d224623b70c639502b01.jpg",
+    "static/media/zidane.jpg": "/ringover-assignment/static/media/zidane.b7444a37d5bbb4202777.jpg",
+    "static/media/medium.png": "/ringover-assignment/static/media/medium.b87629cbe6267bf69b33.png",
+    "index.html": "/ringover-assignment/index.html",
+    "main.f4ccf76b.css.map": "/ringover-assignment/static/css/main.f4ccf76b.css.map",
+    "main.43e4fa36.js.map": "/ringover-assignment/static/js/main.43e4fa36.js.map",
+    "787.c2945f51.chunk.js.map": "/ringover-assignment/static/js/787.c2945f51.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f4ccf76b.css",
+    "static/js/main.43e4fa36.js"
+  ]
+}
