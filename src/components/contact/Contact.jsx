@@ -7,7 +7,7 @@ import twitter from '../../assets/twitter@2x.png'
 const Contact = () => {
   return (
     <div className='contact'>
-        <div className="reach__us">
+        <div className="card">
             <h2 className='contact__head'>REACH US AT</h2>
             <h3 className='contact__mail'>support@kicksup.com</h3>
             <p className='contact__content'>for any technical support</p>
