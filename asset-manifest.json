@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ringover-assignment/static/css/main.f4ccf76b.css",
+    "main.css": "/ringover-assignment/static/css/main.5d291f94.css",
     "main.js": "/ringover-assignment/static/js/main.43e4fa36.js",
     "static/js/787.c2945f51.chunk.js": "/ringover-assignment/static/js/787.c2945f51.chunk.js",
     "static/media/shoe2.png": "/ringover-assignment/static/media/shoe2.6b33f55d1b7df2986de5.png",
@@ -13,12 +13,12 @@
     "static/media/zidane.jpg": "/ringover-assignment/static/media/zidane.b7444a37d5bbb4202777.jpg",
     "static/media/medium.png": "/ringover-assignment/static/media/medium.b87629cbe6267bf69b33.png",
     "index.html": "/ringover-assignment/index.html",
-    "main.f4ccf76b.css.map": "/ringover-assignment/static/css/main.f4ccf76b.css.map",
+    "main.5d291f94.css.map": "/ringover-assignment/static/css/main.5d291f94.css.map",
     "main.43e4fa36.js.map": "/ringover-assignment/static/js/main.43e4fa36.js.map",
     "787.c2945f51.chunk.js.map": "/ringover-assignment/static/js/787.c2945f51.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4ccf76b.css",
+    "static/css/main.5d291f94.css",
     "static/js/main.43e4fa36.js"
   ]
 }
