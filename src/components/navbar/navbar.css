@@ -15,6 +15,7 @@ a {
     text-decoration: none;
     color: black;
     margin-right: 2vw;
+    padding-bottom: 0.5rem;
 }
 
 .nav__options {
@@ -24,4 +25,8 @@ a {
 
 .user {
     margin-right: 8vw;
+}
+
+.active {
+    border-bottom: 3px solid black;
 }

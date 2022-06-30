@@ -6,6 +6,9 @@ import Store from "./components/store/Store";
 import Team from "./components/team/Team";
 import shoe1 from './assets/shoe.jpg'
 import shoe2 from './assets/shoe2.png'
+import Journey from "./components/journey/Journey";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const products = [
   {
@@ -59,12 +62,17 @@ function App() {
   console.log(cart)
 
   return (
+    <Router basename={process.env.PUBLIC_URL}>
     <div className="App">
       <Navbar />
-      {/* <Contact /> */}
-      {/* <Team /> */}
-      <Store prod={prod} setCart={setCart} cart={cart} setProd={setProd} products={products} />
+      <Routes>
+        <Route path="/" element={<Journey />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/store" element={<Store prod={prod} setCart={setCart} cart={cart} setProd={setProd} products={products} />} />
+        <Route path="/team" element={<Team />} />
+      </Routes>
     </div>
+    </Router>
   );
 }
 
