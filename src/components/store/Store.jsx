@@ -6,7 +6,8 @@ import Shoe from "./Shoe";
 import { FiShoppingBag } from 'react-icons/fi'
 import Cart from "./Cart";
 
-const Store = ({ prod, setCart, cart, setProd, products }) => {
+const Store = ({ prod, setCart, cart, setFilter1, setFilter2, setFilter3, setSneakers, setLoafers }) => {
+  console.log(prod);
   return (
     <div className="store">
       <div className="filters card">
@@ -16,32 +17,33 @@ const Store = ({ prod, setCart, cart, setProd, products }) => {
         </div>
         <div className="filter__cost">
           <h3>Cost</h3>
-          <input type="checkbox" id="1500-4000" name="1500-4000" value="1500-4000" onClick={
+          <input type="checkbox" id="1500-4000" name="1500-4000" value="1500-4000" onChange={
             () => {
                 if(document.getElementById('1500-4000').checked)
-                setProd(prod.filter((pro) => pro.price >= 1500 && pro.price <= 4000))
+                setFilter1(true);
                 else
-                setProd(products)
+                setFilter1(false);
             }
           } />
           <label htmlFor="1500-4000"> Rs. 1500-4000</label>
           <br />
-          <input type="checkbox" id="4001-7000" name="4001-7000" value="4001-7000" onClick={
+          <input type="checkbox" id="4001-7000" name="4001-7000" value="4001-7000" onChange={
             () => {
-                if(document.getElementById('4001-7000').checked)
-                setProd(prod.filter((pro) => pro.price >= 4001 && pro.price <= 7000))
+                if(document.getElementById('4001-7000').checked){
+                setFilter2(true);
+                }
                 else
-                setProd(products)
+                setFilter2(false);
             }
           } />
           <label htmlFor="4001-7000"> Rs. 4001-7000</label>
           <br />
-          <input type="checkbox" id="7001+" name="7001+" value="7001+" onClick={
+          <input type="checkbox" id="7001+" name="7001+" value="7001+" onChange={
             () => {
                 if(document.getElementById('7001+').checked)
-                setProd(prod.filter((pro) => pro.price >= 7001))
+                setFilter3(true);
                 else
-                setProd(products)
+                setFilter3(false);
             }
           } />
           <label htmlFor="7001+"> Rs. 7001+</label>
@@ -74,9 +76,9 @@ const Store = ({ prod, setCart, cart, setProd, products }) => {
           <input type="checkbox" name="" id="sneakers" value="sneakers" onClick={
             () => {
                 if(document.getElementById('sneakers').checked)
-                setProd(prod.filter((pro) => pro.type === 'Sneakers'))
+                setSneakers(true);
                 else
-                setProd(products)
+                setSneakers(false);
             }
           } />
           <label htmlFor="sneakers"> Sneakers</label>
@@ -84,9 +86,9 @@ const Store = ({ prod, setCart, cart, setProd, products }) => {
           <input type="checkbox" name="" id="loafers" value="loafers" onClick={
             () => {
                 if(document.getElementById('loafers').checked)
-                setProd(prod.filter((pro) => pro.type === 'Loafers'))
+                setLoafers(true);
                 else
-                setProd(products)
+                setLoafers(false);
             }
           } />
           <label htmlFor="loafers"> Loafers</label>

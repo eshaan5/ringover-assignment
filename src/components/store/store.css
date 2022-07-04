@@ -23,7 +23,8 @@
 
 .shoes {
     padding: 1.3rem;
-    max-height: 100vh;
+    max-height: 90vh;
+    overflow-y: scroll;
 }
 
 .shoes__array {
