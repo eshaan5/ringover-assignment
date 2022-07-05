@@ -8,7 +8,7 @@ const Cart = ({ cart, setCart }) => {
             <>
                 {cart.map((pro) => {
                     return (
-                        <div className="cart__item">
+                        <div className="cart__item" key={pro.id}>
                             <img src={pro.img} alt="" style={{width: '8rem', marginLeft: 0, height: '6rem'}} />
                             <div className="cart__item__info">
                                 <h3>{pro.name}</h3>

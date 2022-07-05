@@ -6,8 +6,8 @@ import Shoe from "./Shoe";
 import { FiShoppingBag } from 'react-icons/fi'
 import Cart from "./Cart";
 
-const Store = ({ prod, setCart, cart, setFilter1, setFilter2, setFilter3, setSneakers, setLoafers }) => {
-  console.log(prod);
+const Store = ({ prod, setCart, cart, setFilter1, setFilter2, setFilter3, filter1, filter2, filter3, setSneakers, setLoafers, sneakers, loafers }) => {
+  
   return (
     <div className="store">
       <div className="filters card">
@@ -17,35 +17,22 @@ const Store = ({ prod, setCart, cart, setFilter1, setFilter2, setFilter3, setSne
         </div>
         <div className="filter__cost">
           <h3>Cost</h3>
-          <input type="checkbox" id="1500-4000" name="1500-4000" value="1500-4000" onChange={
+          <input type="checkbox" id="1500-4000" name="1500-4000" value="1500-4000" className="CheckBox" onChange={
             () => {
-                if(document.getElementById('1500-4000').checked)
-                setFilter1(true);
-                else
-                setFilter1(false);
-            }
-          } />
+              setFilter1(!filter1)
+          }} />
           <label htmlFor="1500-4000"> Rs. 1500-4000</label>
           <br />
-          <input type="checkbox" id="4001-7000" name="4001-7000" value="4001-7000" onChange={
+          <input type="checkbox" id="4001-7000" name="4001-7000" value="4001-7000" className="CheckBox" onChange={
             () => {
-                if(document.getElementById('4001-7000').checked){
-                setFilter2(true);
-                }
-                else
-                setFilter2(false);
-            }
-          } />
+              setFilter2(!filter2)
+          }} />
           <label htmlFor="4001-7000"> Rs. 4001-7000</label>
           <br />
-          <input type="checkbox" id="7001+" name="7001+" value="7001+" onChange={
+          <input type="checkbox" id="7001+" name="7001+" value="7001+" className="CheckBox" onChange={
             () => {
-                if(document.getElementById('7001+').checked)
-                setFilter3(true);
-                else
-                setFilter3(false);
-            }
-          } />
+              setFilter3(!filter3)
+          }} />
           <label htmlFor="7001+"> Rs. 7001+</label>
           <br />
         </div>
@@ -73,22 +60,16 @@ const Store = ({ prod, setCart, cart, setFilter1, setFilter2, setFilter3, setSne
         </div>
         <div className="filter__type">
           <h3>Type</h3>
-          <input type="checkbox" name="" id="sneakers" value="sneakers" onClick={
+          <input type="checkbox" name="" id="sneakers" value="sneakers" onChange={
             () => {
-                if(document.getElementById('sneakers').checked)
-                setSneakers(true);
-                else
-                setSneakers(false);
+                setSneakers(!sneakers)
             }
           } />
           <label htmlFor="sneakers"> Sneakers</label>
           <br />
-          <input type="checkbox" name="" id="loafers" value="loafers" onClick={
+          <input type="checkbox" name="" id="loafers" value="loafers" onChange={
             () => {
-                if(document.getElementById('loafers').checked)
-                setLoafers(true);
-                else
-                setLoafers(false);
+                setLoafers(!loafers)
             }
           } />
           <label htmlFor="loafers"> Loafers</label>
@@ -106,7 +87,7 @@ const Store = ({ prod, setCart, cart, setFilter1, setFilter2, setFilter3, setSne
         </div>
         <div className="shoes__array">
           {prod.map((pro) => (
-           <Shoe pro={pro} setCart={setCart} cart={cart} />
+           <Shoe key={pro.id} pro={pro} setCart={setCart} cart={cart} />
           ))}
         </div>
       </div>

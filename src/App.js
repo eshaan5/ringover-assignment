@@ -17,6 +17,7 @@ const products = [
     price: 2500,
     type: "Loafers",
     img: shoe1,
+    range: "1500-4000",
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const products = [
     price: 2000,
     type: "Sneakers",
     img: shoe2,
+    range: "1500-4000",
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ const products = [
     price: 5000,
     type: "Loafers",
     img: shoe1,
+    range: "4001-7000",
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ const products = [
     price: 2000,
     type: "Sneakers",
     img: shoe2,
+    range: "1500-4000",
   },
   {
     id: 5,
@@ -45,6 +49,7 @@ const products = [
     price: 2500,
     type: "Loafers",
     img: shoe1,
+    range: "1500-4000",
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ const products = [
     price: 10000,
     type: "Sneakers",
     img: shoe2,
+    range: "7001+",
   },
   {
     id: 7,
@@ -59,6 +65,7 @@ const products = [
     price: 5000,
     type: "Loafers",
     img: shoe1,
+    range: "4001-7000",
   },
   {
     id: 8,
@@ -66,6 +73,7 @@ const products = [
     price: 2000,
     type: "Sneakers",
     img: shoe2,
+    range: "1500-4000",
   },
   {
     id: 9,
@@ -73,6 +81,7 @@ const products = [
     price: 2500,
     type: "Loafers",
     img: shoe1,
+    range: "1500-4000",
   },
   {
     id: 10,
@@ -80,71 +89,58 @@ const products = [
     price: 10000,
     type: "Sneakers",
     img: shoe2,
-  }
+    range: "7001+",
+  },
 ];
 
 function App() {
-
   const [prod, setProd] = useState(products);
   const [cart, setCart] = useState([]);
+  const [list, setList] = useState([]);
 
-  const [filter1, setFilter1] = useState(false);
-  const [filter2, setFilter2] = useState(false);
-  const [filter3, setFilter3] = useState(false);
+   const [filter1, setFilter1] = useState(false);
+   const [filter2, setFilter2] = useState(false);
+   const [filter3, setFilter3] = useState(false);
 
-  const [sneakers, setSneakers] = useState(false);
-  const [loafers, setLoafers] = useState(false);
-
-  let filteredArray = [];
+   const [sneakers, setSneakers] = useState(false);
+   const [loafers, setLoafers] = useState(false);
 
   const filterArray = () => {
-
     if (filter1 && filter2 && filter3) {
-      filteredArray = products.filter((item) => item.price >= 1500);
-      setProd(filteredArray);
-      console.log(filteredArray);
+      setProd(products.filter((item) => item.price >= 1500));
     }
-    else {
-      setProd(products);
+    else if (filter1 && filter2) {
+      setProd(products.filter((pro) => pro.price >= 1500 && pro.price <= 7000));
     }
-    if (filter1 && filter2) {
-      filteredArray = products.filter((pro) => pro.price >= 1500 && pro.price <= 7000);
-      setProd(filteredArray);
-      console.log(prod)
-      console.log(filteredArray);
-    }
-    if (filter2 && filter3) {
+    else if (filter2 && filter3) {
       setProd(products.filter((pro) => pro.price >= 4001));
     }
-    if (filter1 && filter3) {
+    else if (filter1 && filter3) {
       setProd(products.filter((pro) => (pro.price >= 1500 && pro.price <= 4000) || pro.price >= 7001));
     }
-    if (filter1) {
+    else if (filter1) {
       setProd(products.filter((pro) => pro.price >= 1500 && pro.price <= 4000));
+    }
+    else if (filter2) {
+      setProd(products.filter((pro) => pro.price >= 4001 && pro.price <= 7000));
+    }
+    else if (filter3) {
+      setProd(products.filter((pro) => pro.price >= 7001));
     }
     else {
       setProd(products);
     }
-    if (filter2) {
-      setProd(products.filter((pro) => pro.price >= 4001 && pro.price <= 7000));
-    }
-    if (filter3) {
-      setProd(products.filter((pro) => pro.price >= 7001));
-    }
-
     if (sneakers && loafers) {
-      setProd(products);
-      console.log(prod);
+      setProd(prod);
+    }
+    else if (sneakers) {
+      setProd(prod.filter((pro) => pro.type === "Sneakers"));
     }
 
-    if (sneakers) {
-      setProd(products.filter((pro) => pro.type === "Sneakers"));
+    else if (loafers) {
+      setProd(prod.filter((pro) => pro.type === "Loafers"));
     }
-
-    if (loafers) {
-      setProd(products.filter((pro) => pro.type === "Loafers"));
-    }
-  }
+  };
 
   useEffect(() => {
     filterArray();
@@ -157,8 +153,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Journey />} />
           <Route path="/contact" element={<Contact />} />
-          {console.log(prod)}
-          <Route path="/store" element={<Store prod={prod} setCart={setCart} cart={cart} setFilter1={setFilter1} setFilter2={setFilter2} setFilter3={setFilter3} setSneakers={setSneakers} setLoafers={setLoafers} />} />
+          <Route path="/store" element={<Store prod={prod} setCart={setCart} cart={cart} setFilter1={setFilter1} setFilter2={setFilter2} setFilter3={setFilter3} filter1={filter1} filter2={filter2} filter3={filter3} setSneakers={setSneakers} setLoafers={setLoafers} sneakers={sneakers} loafers={loafers} />} />
           <Route path="/team" element={<Team />} />
         </Routes>
       </div>
