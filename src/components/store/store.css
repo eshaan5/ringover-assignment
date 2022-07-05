@@ -47,6 +47,13 @@
     gap: 1rem;
     margin-top: 2rem;
     padding-left: 0;
-    width: 200%;
+    /* width: 200%; */
     margin-right: 0;
 }
+
+@media only screen and (max-width: 1199px) {
+    .shoes__array {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+  }
